@@ -1,0 +1,14 @@
+Package: dataDepository
+Type: Package
+Title: Register datasets in BigQuery
+Version: 0.1.0
+Author: Iain Wallace
+Maintainer: Iain Wallace <iain.wallace@gmail.com>
+Description: Upload datasets as a publicly available table in BigQuery with
+    appropiate metadata 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2017-08-12 20:42:05 UTC; wallaiai

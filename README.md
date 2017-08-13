@@ -18,3 +18,8 @@ BigQuery is a serverless database that is an attractive solution to store and sh
 * Metadata can be used to describe the dataset.
 * All datasets can be referenced with unique URL
 
+## Examples
+[Compound names from PubChem mapped onto InChIKeys](https://bigquery.cloud.google.com/dataset/decisive-coder-171820:dataflow_output)
+[Compound activities from ChEMBL enhanced with InChIKeys](https://bigquery.cloud.google.com/dataset/decisive-coder-171820:Chembl)
+[Count of compounds appearing in databases based on UniChem](https://bigquery.cloud.google.com/dataset/decisive-coder-171820:UniChem)
+

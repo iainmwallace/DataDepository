@@ -4,7 +4,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   #'     bucket. All files generated in as part of the function call will
   #'     contain the same generated UUID value
   #' @import googleCloudStorageR
-  #' @import testthat
+  #' @import assertthat
   #' @import uuid
   #' @import bigrquery
   #' @param my_data Dataset to upload to gcs. It must pass a validation test
@@ -23,7 +23,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   ### Table: test2_ev_tk7esvZiCR4g7BFDkMXxnBs01vvW03jpVdLmV9sioEs_source
 
 
-  assert_that(nrow(my_data>0),msg = "Input data frame doesn't contain any rows")
+  assert_that(nrow(my_data)>0,msg = "Input data frame doesn't contain any rows")
 
   d <- 1:nrow(my_data)
   chunks <- split(d, ceiling(seq_along(d) / chunk_size))

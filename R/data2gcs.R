@@ -63,7 +63,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
     upload_details[[i]] <-
       gcs_upload(my_filename,
                  bucket = my_bucket,
-                 object_metadata = metao)
+                 object_metadata = meta)
     setTxtProgressBar(pb, i)
   }
 

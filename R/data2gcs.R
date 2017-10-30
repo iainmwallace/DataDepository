@@ -7,6 +7,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   #' @import assertthat
   #' @import uuid
   #' @import bigrquery
+  #' @import readr
   #' @param my_data Dataset to upload to gcs. It must pass a validation test
   #' @param my_file_name Main name for each json file
   #' @param my_metadata List of metadata to be associated with the uploaded files

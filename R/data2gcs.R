@@ -7,6 +7,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   #' @import assertthat
   #' @import uuid
   #' @import bigrquery
+  #' @import readr
   #' @param my_data Dataset to upload to gcs. It must pass a validation test
   #' @param my_file_name Main name for each json file
   #' @param my_metadata List of metadata to be associated with the uploaded files
@@ -52,7 +53,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   files <- list.files(tempdir(), pattern = file_pattern)
   upload_details<-list()
 
-  pb <- txtProgressBar(min = 1,
+  pb <- txtProgressBar(min = 0,
                        max = length(files),
                        style = 3)
   for (i in seq_along(files)) {
@@ -62,7 +63,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
     upload_details[[i]] <-
       gcs_upload(my_filename,
                  bucket = my_bucket,
-                 object_metadata = meta)
+                 object_metadata = metao)
     setTxtProgressBar(pb, i)
   }
 

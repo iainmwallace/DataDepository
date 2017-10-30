@@ -23,3 +23,6 @@ BigQuery is a serverless database that is an attractive solution to store and sh
 [Compound activities from ChEMBL enhanced with InChIKeys](https://bigquery.cloud.google.com/dataset/decisive-coder-171820:Chembl)
 [Count of compounds appearing in databases based on UniChem](https://bigquery.cloud.google.com/dataset/decisive-coder-171820:UniChem)
 
+## 
+
+[Shiny app to query BigQuery](https://github.com/MarkEdmondson1234/BigQuery-Visualiser)

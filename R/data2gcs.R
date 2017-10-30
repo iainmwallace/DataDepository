@@ -1,4 +1,4 @@
-data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=100000) {
+data2gcs <- function(my_data,my_file_name,my_bucket,my_foldername,my_metadata, chunk_size=100000) {
   #' @title Store data as collection of zipped json files on cloud storage
   #' @description  Split a dataset into many small json files and upload to a
   #'     bucket. All files generated in as part of the function call will
@@ -10,6 +10,7 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
   #' @import readr
   #' @param my_data Dataset to upload to gcs. It must pass a validation test
   #' @param my_file_name Main name for each json file
+  #' @param my_foldername Folder to use in the bucket
   #' @param my_metadata List of metadata to be associated with the uploaded files
   #' @param bucket Bucket to store the files in
   #' @param chunk_size Number of rows per json file, ideally <5mb per file
@@ -63,7 +64,8 @@ data2gcs <- function(my_data,my_file_name,my_bucket,my_metadata, chunk_size=1000
     upload_details[[i]] <-
       gcs_upload(my_filename,
                  bucket = my_bucket,
-                 object_metadata = meta)
+                 object_metadata = meta,
+                 name=paste0(my_foldername,"/",files[i]))
     setTxtProgressBar(pb, i)
   }
 

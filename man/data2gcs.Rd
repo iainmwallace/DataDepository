@@ -4,12 +4,15 @@
 \alias{data2gcs}
 \title{Store data as collection of zipped json files on cloud storage}
 \usage{
-data2gcs(my_data, my_file_name, my_bucket, my_metadata, chunk_size = 1e+05)
+data2gcs(my_data, my_file_name, my_bucket, my_foldername, my_metadata,
+  chunk_size = 1e+05)
 }
 \arguments{
 \item{my_data}{Dataset to upload to gcs. It must pass a validation test}
 
 \item{my_file_name}{Main name for each json file}
+
+\item{my_foldername}{Folder to use in the bucket}
 
 \item{my_metadata}{List of metadata to be associated with the uploaded files}
 
